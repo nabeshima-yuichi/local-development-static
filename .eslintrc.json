@@ -1,0 +1,19 @@
+{
+  "extends": ["eslint:recommended"],
+  "parser": "babel-eslint",
+  "plugins": [
+    "ejs"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "jquery": true
+  },
+  "globals": {},
+  "rules": {}
+}
