@@ -33,6 +33,3 @@ $ yarn run prod
 ```
 $ yarn run svg
 ```
-
-## スタイルガイド
-http://localhost:8080/_styleguide/

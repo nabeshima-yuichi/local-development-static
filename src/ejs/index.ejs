@@ -1,13 +1,15 @@
-<html>
-  <head>
-    <link rel="stylesheet" href="./assets/stylesheets/app.css">
-  </head>
-  <body>
-    <div class="js-slides">
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
-    </div>
-    <script type="text/javascript" src="./assets/javascripts/app.js"></script>
-  </body>
-</html>
+<%
+  const data = {
+    title: '',
+    description: '',
+    url: '',
+    path: './',
+    slug: 'top'
+  }
+%>
+<%- include( data.path + '_partial/_head', {data: data} ); %>
+<%- include( data.path + '_partial/_header', {data: data} ); %>
+<main>
+
+</main>
+<%- include( data.path + '_partial/_footer', {data: data} ); %>

@@ -24,9 +24,8 @@ const paths = {
   },
   css: {
     src: './src/scss/**/*.{css,scss,sass}',
-    dest: './dist/assets/scss',
+    dest: './dist/assets/css',
   },
-  styleguide: './src/aigis/aigis_config.yml',
   js: {
     src: './src/js/**/*.js',
     dest: './dist/assets/js',
@@ -76,12 +75,6 @@ export const stylelint = () => {
       ],
       syntax: 'scss',
     }))
-}
-
-// Styleguide
-export const styleguide = () => {
-  return src(paths.styleguide)
-    .pipe(plugins.aigis())
 }
 
 // EJS
@@ -177,7 +170,6 @@ export const clean = () => {
 export const watchFiles = callback => {
   watch(paths.css.src).on('change', series(sass, stream))
   watch(paths.css.src).on('change', series(stylelint, reload))
-  watch(paths.css.src).on('change', series(styleguide, reload))
   watch(paths.js.src).on('change', series(js, reload))
   watch(paths.ejs.src[0]).on('change', series(ejs, reload)) // partialファイルもwatchする
   watch("./src/ejs/**/*.php").on('change', series(php, reload))
@@ -187,7 +179,7 @@ export const watchFiles = callback => {
   callback()
 }
 
-export const dev = series(clean, parallel(sass, stylelint, styleguide, ejs, js, php, yml, txt, image), server, watchFiles)
-export const prod = series(clean, parallel(sass, ejs, js, image))
+export const dev = series(clean, parallel(sass, stylelint, ejs, js, image, php, yml, txt), server, watchFiles)
+export const prod = series(clean, parallel(sass, ejs, js, image, php, yml, txt))
 
 export default dev
