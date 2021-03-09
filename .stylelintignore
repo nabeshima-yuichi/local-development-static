@@ -1,2 +1,2 @@
-src/stylesheets/foundations/_normalize.scss
-src/stylesheets/vendor/_slick.scss
+src/scss/foundation/_reset.scss
+src/scss/vendor/_slick.scss

@@ -1,0 +1,10 @@
+.only-pc {
+  @include sp {
+    display: none;
+  }
+}
+.only-sp {
+  @include pc {
+    display: none;
+  }
+}

@@ -23,20 +23,17 @@ const paths = {
     dest: './dist',
   },
   css: {
-    src: './src/stylesheets/**/*.{css,scss,sass}',
-    dest: './dist/assets/stylesheets',
-    // dest:  './theme',
+    src: './src/scss/**/*.{css,scss,sass}',
+    dest: './dist/assets/scss',
   },
   styleguide: './src/aigis/aigis_config.yml',
   js: {
-    src: './src/javascripts/**/*.js',
-    dest: './dist/assets/javascripts',
-    // dest:  './theme/javascripts',
+    src: './src/js/**/*.js',
+    dest: './dist/assets/js',
   },
   image: {
     src: './src/images/**/*.{jpg,jpeg,png,svg,gif}',
     dest: './dist/assets/images',
-    // dest:  './theme/images',
   },
   svg: {
     src: './src/sprites/icons/*.svg',
@@ -154,24 +151,10 @@ export const svg = () => {
     .pipe(dest(paths.svg.dest))
 }
 
-// Server
-// export const server = callback => {
-//   plugins.connect.server({
-//     name: 'localhost',
-//     root: './dist/',
-//     port: 8080,
-//     host: '0.0.0.0',
-//     livereload: false,
-//   })
-//   callback()
-// }
-
 export const server = (done) => {
   browserSync.init({
-    //proxy: 'localhost:8080'
     server: {
       baseDir: './dist/',
-      // index: "index.html"
     }
   });
   done();

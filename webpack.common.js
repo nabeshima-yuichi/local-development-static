@@ -1,9 +1,9 @@
 import webpack from 'webpack'
 
 module.exports = {
-  entry: ['@babel/polyfill', './src/javascripts/main.js'],
+  entry: ['@babel/polyfill', './src/js/main.js'],
   output: {
-    path: `${__dirname}/dist/assets/javascripts`,
+    path: `${__dirname}/dist/assets/js`,
     filename: 'app.js'
   },
   module: {
